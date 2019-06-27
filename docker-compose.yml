@@ -1,0 +1,29 @@
+version: "2"
+
+volumes:
+    petclinic-teste:
+
+services:
+    petclinic:
+        image: maribond/petclinic
+        ports:
+            - "8080"
+
+       
+    
+    mysql:
+        image: mysql:5.7.8
+    
+        ports:
+            - "3306"
+
+        environment:
+            - MYSQL_ROOT_PASSWORD=petclinic
+            - MYSQL_DATABASE=petclinic
+        volumes:
+         - ./db:\Users\Daniel\spring-petclinic\target\classes\db\mysql
+        
+   
+   
+   
+   
